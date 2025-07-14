@@ -24,7 +24,7 @@ import WishListContextProvider from "./Components/Context/WishListContext";
 import ForgetPassword from "./Components/ForgetPassword/EnterEmail";
 import VerificationCode from "./Components/ForgetPassword/VerificationCode";
 import ResetPassword from "./Components/ForgetPassword/ResetPassword";
-import Error from "./Components/Error/Error";
+
 function App() {
   let queryClient= new QueryClient()
   let router = createBrowserRouter([
@@ -41,7 +41,6 @@ function App() {
         { path: "ProductDetails/:id/:category", element:<ProtectedRoute><ProductDetails/></ProtectedRoute>},
         { path: "categories", element:  <ProtectedRoute><Categories /></ProtectedRoute>},
         { path: "brands", element:<ProtectedRoute><Brands /></ProtectedRoute>},
-        { path: "error", element:<ProtectedRoute><Error/></ProtectedRoute>},
         { path: "forget-passowrd", element:  <GuestRoute><ForgetPassword/></GuestRoute>},
         { path: "v-code", element:  <GuestRoute><VerificationCode/></GuestRoute>},
         { path: "reset-passwored", element:  <GuestRoute><ResetPassword/></GuestRoute>},
