@@ -1,7 +1,5 @@
-import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 import { useQuery } from '@tanstack/react-query';
-import Style from './Categories.module.css'
 import Spiner from '../Spiner/Spiner';
 export default function Categories() {
   function getCategories()
