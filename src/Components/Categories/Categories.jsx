@@ -2,12 +2,13 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 import { useQuery } from '@tanstack/react-query';
 import Style from './Categories.module.css'
+import Spiner from '../Spiner/Spiner';
 export default function Categories() {
   function getCategories()
   {
   return  axios.get(`https://ecommerce.routemisr.com/api/v1/categories`)
   }
-  let {data}=useQuery({
+  let {data , isLoading}=useQuery({
     queryKey: ['categories'],
     queryFn: getCategories,
     select :(data)=>{
@@ -15,10 +16,7 @@ export default function Categories() {
     }
   })
   
-  
-    // useEffect(()=>{
-      
-    // },[])
+  if (isLoading) return <Spiner />;
   return <>
 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-4">
   {data?.map((prod) => (

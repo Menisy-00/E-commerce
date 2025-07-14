@@ -1,13 +1,15 @@
 import { useNavigate } from 'react-router-dom';
 import useUserOrder from "../../Hooks/useUserOrder";
+import Spiner from '../Spiner/Spiner';
 export default function Allorders() {
     let navigate = useNavigate();
     function goToSpecificOrder(id)
     {
       navigate(`/specific_order/${id}`)
     }
-    let {data}=useUserOrder()
+    let {data ,isLoading}=useUserOrder()
     let orderData=data?.data
+    if (isLoading) return <Spiner />;
   return <>
       <div className="relative overflow-x-auto shadow-md sm:rounded-lg w-3/4 m-auto">
         <table className="w-full text-sm text-left rtl:text-right text-gray-500 ">

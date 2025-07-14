@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import Style from './Cart.module.css'
 import { CartContext } from '../Context/CartContext'
 import { Link } from 'react-router-dom';
+import Spiner from '../Spiner/Spiner';
 export default function Cart() {
   const [cartData, setCartData] = useState(null)
 let{removeCartItems,getCart,removeCarts ,UpdateCartCount}=useContext(CartContext);
@@ -35,7 +36,7 @@ let{removeCartItems,getCart,removeCarts ,UpdateCartCount}=useContext(CartContext
     getCartProduct()
   },[])
   return <>
-<div className='flex flex-col gap-6 my-10 '>
+  {cartData?.data.products?.length > 0 ?<div className='flex flex-col gap-6 my-10 '>
   <div className='flex justify-between items-center'>
   <h2 className='text-3xl font-semibold text-slate-700'>Cart <span className='text-base font-normal text-gray-400'>({cartData?.numOfCartItems} Items)</span></h2>
   <button onClick={removeAllCart}  className='w-1/3 md:w-1/5 font-semibold text-gray-900 border border-sky-600 px-4 py-2 rounded-md my-2 cursor-pointer hover:bg-sky-600 transition duration-300 capitalize'> Clear Your Cart</button>
@@ -108,7 +109,8 @@ let{removeCartItems,getCart,removeCarts ,UpdateCartCount}=useContext(CartContext
     <button  className='w-full font-semibold text-white bg-yellow-600 px-4 py-2 rounded-md my-2 cursor-pointer hover:bg-yellow-800 transition duration-300 capitalize'>check out</button>
     </Link>
   </div>
-  </div>
+  </div> :<Spiner />}
+
 
 
   </>
