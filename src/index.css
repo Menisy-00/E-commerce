@@ -1,0 +1,7 @@
+@import "tailwindcss";
+.row{
+    @apply flex flex-wrap px-4 py-8 items-center;
+}
+body{
+  background: linear-gradient(to bottom, #e0f7fa, #ffffff);
+}
