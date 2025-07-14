@@ -1,7 +1,7 @@
 import "./App.css";
 import Brands from "./Components/Brands/Brands";
 import Cart from "./Components/Cart/Cart";
-import Categories from "./Components/categories/categories";
+import Categories from "./Components/Categories/Categories";
 import Home from "./Components/Home/Home";
 import Layout from "./Components/Layout/Layout";
 import Login from "./Components/Login/Login";
@@ -24,7 +24,6 @@ import WishListContextProvider from "./Components/Context/WishListContext";
 import ForgetPassword from "./Components/ForgetPassword/EnterEmail";
 import VerificationCode from "./Components/ForgetPassword/VerificationCode";
 import ResetPassword from "./Components/ForgetPassword/ResetPassword";
-
 function App() {
   let queryClient= new QueryClient()
   let router = createBrowserRouter([
