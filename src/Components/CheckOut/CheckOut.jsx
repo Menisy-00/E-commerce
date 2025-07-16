@@ -24,7 +24,6 @@ export default function CheckOut() {
         }
       )
       .then((response) => {
-        console.log(response);
         if (response.data.status == "success") {
           window.location.href = response.data.session.url;
         }
