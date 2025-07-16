@@ -15,7 +15,7 @@ export default function CheckOut() {
   function payOnline(val) {
     axios
       .post(
-        `https://ecommerce.routemisr.com/api/v1/orders/checkout-session/${CartId}?url=http://localhost:5173`,
+        `https://ecommerce.routemisr.com/api/v1/orders/checkout-session/${CartId}?url=https://e-commerce-zeta-indol-23.vercel.app`,
         {
           shippingAddress: val,
         },
